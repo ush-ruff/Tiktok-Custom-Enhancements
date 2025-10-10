@@ -2,7 +2,7 @@
 // @name         Tiktok - Custom Enhancements
 // @namespace    Violentmonkey Scripts
 // @match        https://*.tiktok.com/*
-// @version      0.1.1
+// @version      0.1.2
 // @author       ushruff
 // @description  Setup custom keyboard shortcuts for Tiktok
 // @homepageURL  https://github.com/ush-ruff/Tiktok-Custom-Enhancements/
@@ -16,11 +16,11 @@
 // -----------------------
 const KEYS = {
   "-": {
-    action: () => clickElement(`[class*='DivPlayIconContainer'] > div`),
+    action: () => clickElement(`[class*='DivPlayIconContainer']`),
     label: "Play/Pause",
   },
   "*": {
-    action: () => clickElement(`[class*='DivVoiceControlContainer']`),
+    action: () => clickElement(`[class*='DivVoiceControlContainer'] > div`),
     label: "Mute",
   },
   "F": {
@@ -35,18 +35,18 @@ const KEYS = {
     action: () => clickElement(`#verify-bar-close`),
     label: "Dismiss Captcha",
   },
-  "LeftArrow": {
-    action: () => clickElement(`[class*='DivVideoControlContainer'] [class*='DivLeftArrow']:not([disabled])`, `[class*='DivRelatedMask'] [class*='DivArrow']:not([disabled]:nth-child(1)`),
+  "ARROWLEFT": {
+    action: () => clickElement(`[class*='DivVideoControlContainer'] [class*='DivLeftArrow']:not([disabled])`, `[class*='DivRelatedMask'] [class*='DivArrow']:not([disabled]):nth-child(1)`),
     label: "Click left",
   },
-  "RightArrow": {
-    action: () => clickElement(`[class*='DivVideoControlContainer'] [class*='DivRightArrow']:not([disabled]`, `[class*='DivRelatedMask'] [class*='DivArrow']:not([disabled]:nth-child(3)`),
+  "ARROWRIGHT": {
+    action: () => clickElement(`[class*='DivVideoControlContainer'] [class*='DivRightArrow']:not([disabled])`, `[class*='DivRelatedMask'] [class*='DivArrow']:not([disabled]):nth-child(3)`),
     label: "Click right",
   },
   "Shift + ?": {
     action: () => showShortcuts(),
     label: "Show shortcut help",
-  },
+  }
 }
 
 const MODAL_ID = "shortcut-modal"
