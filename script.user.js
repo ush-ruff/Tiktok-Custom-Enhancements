@@ -2,7 +2,7 @@
 // @name         Tiktok - Custom Enhancements
 // @namespace    Violentmonkey Scripts
 // @match        https://*.tiktok.com/*
-// @version      0.1.0
+// @version      0.1.1
 // @author       ushruff
 // @description  Setup custom keyboard shortcuts for Tiktok
 // @homepageURL  https://github.com/ush-ruff/Tiktok-Custom-Enhancements/
@@ -16,11 +16,11 @@
 // -----------------------
 const KEYS = {
   "-": {
-    action: () => clickElement(`[class*='DivVoiceControlContainer'] > div`),
+    action: () => clickElement(`[class*='DivPlayIconContainer'] > div`),
     label: "Play/Pause",
   },
   "*": {
-    action: () => clickElement(`[class*='DivPlayIconContainer']`),
+    action: () => clickElement(`[class*='DivVoiceControlContainer']`),
     label: "Mute",
   },
   "F": {
