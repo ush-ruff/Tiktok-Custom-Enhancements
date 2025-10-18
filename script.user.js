@@ -2,7 +2,7 @@
 // @name         Tiktok - Custom Enhancements
 // @namespace    Violentmonkey Scripts
 // @match        https://*.tiktok.com/*
-// @version      0.1.2
+// @version      0.1.3
 // @author       ushruff
 // @description  Setup custom keyboard shortcuts for Tiktok
 // @homepageURL  https://github.com/ush-ruff/Tiktok-Custom-Enhancements/
@@ -31,7 +31,7 @@ const KEYS = {
     action: () => clickElement(`[class*='CountDownAvatarContainer']`),
     label: "Dismiss Channel Autoload",
   },
-  "Esc": {
+  "ESCAPE": {
     action: () => clickElement(`#verify-bar-close`),
     label: "Dismiss Captcha",
   },
