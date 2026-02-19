@@ -2,7 +2,7 @@
 // @name         Tiktok - Custom Enhancements
 // @namespace    Violentmonkey Scripts
 // @match        https://*.tiktok.com/*
-// @version      1.0.1
+// @version      1.0.2
 // @author       ushruff
 // @description  Setup custom keyboard shortcuts for Tiktok
 // @homepageURL  https://github.com/ush-ruff/Tiktok-Custom-Enhancements/
@@ -61,5 +61,4 @@ const { installKeyHandler, setupShortcutInfo, showShortcutInfo, clickElement } =
 window.addEventListener("load", () => {
   installKeyHandler(KEYS)
   setupShortcutInfo(MODAL_ID, KEYS)
-  addStyle()
 })
