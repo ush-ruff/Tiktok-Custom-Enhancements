@@ -2,13 +2,14 @@
 // @name         Tiktok - Custom Enhancements
 // @namespace    Violentmonkey Scripts
 // @match        https://*.tiktok.com/*
-// @version      1.1.0
+// @version      1.2.0
 // @author       ushruff
 // @description  Setup custom keyboard shortcuts for Tiktok
 // @homepageURL  https://github.com/ush-ruff/Tiktok-Custom-Enhancements/
 // @downloadURL  https://github.com/ush-ruff/Tiktok-Custom-Enhancements/raw/main/script.user.js
 // @grant        none
 // @license      GNU GPLv3
+// @require      https://raw.githubusercontent.com/ush-ruff/Common/main/Userscript-Helper-Lib/helpersBootstrap.js
 // ==/UserScript==
 
 // -------------------------------------------
@@ -54,29 +55,7 @@ const MODAL_ID = "shortcut-modal"
 // -------------------------------------------
 // Setup Dependencies
 // -------------------------------------------
-const LIB_INSTALL_URL = "https://raw.githubusercontent.com/ush-ruff/Common/main/Userscript-Helper-Lib/helpersLib.user.js"
-
-function ensureLibrary() {
-  const lib = window.ushruffUSKit
-
-  if (!lib) {
-    console.error(
-      `The installed script requires ushrufUSKit library. Install the script and refresh the current tab.\n` +
-      `If the script does not automatically redirect you, visit the following link.\n` +
-      `${LIB_INSTALL_URL}` +
-      `Ensure that the library runs before the current script to avoid errors.`
-    )
-    window.open(LIB_INSTALL_URL, "_blank")
-    return false
-  }
-
-  return true
-}
-
-if (!ensureLibrary()) {
-  return
-}
-
+const ushruffUSKit = ensureUSKit.getUSKit()
 const { installKeyHandler, setupShortcutInfo, showShortcutInfo, clickElement } = window.ushruffUSKit
 
 
