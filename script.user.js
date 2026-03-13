@@ -2,7 +2,7 @@
 // @name         Tiktok - Custom Enhancements
 // @namespace    Violentmonkey Scripts
 // @match        https://*.tiktok.com/*
-// @version      1.2.0
+// @version      1.2.1
 // @author       ushruff
 // @description  Setup custom keyboard shortcuts for Tiktok
 // @homepageURL  https://github.com/ush-ruff/Tiktok-Custom-Enhancements/
@@ -50,19 +50,20 @@ const KEYS = {
   }
 }
 
-const MODAL_ID = "shortcut-modal"
+const SCRIPT_ID = "Tiktok-custom-enhancements"
+const MODAL_ID = "Tiktok-shortcut-modal"
 
 // -------------------------------------------
 // Setup Dependencies
 // -------------------------------------------
 const ushruffUSKit = ensureUSKit.getUSKit()
-const { installKeyHandler, setupShortcutInfo, showShortcutInfo, clickElement } = window.ushruffUSKit
+const { registerShortcutKeys, setupShortcutInfo, showShortcutInfo, clickElement } = window.ushruffUSKit
 
 
 // -------------------------------------------
 // Event Listeners
 // -------------------------------------------
 window.addEventListener("load", () => {
-  installKeyHandler(KEYS)
+  registerShortcutKeys(SCRIPT_ID, KEYS)
   setupShortcutInfo(MODAL_ID, KEYS)
 })
